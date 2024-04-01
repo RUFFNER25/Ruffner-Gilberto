@@ -1,0 +1,44 @@
+@startuml
+
+entity "Animal" {
+  + id: integer
+  --
+  + name: string
+  + species_id: integer
+  + habitat_id: integer
+  + caregiver_id: integer
+}
+
+entity "Especie" {
+  + id: integer
+  --
+  + name: string
+}
+
+entity "Recinto" {
+  + id: integer
+  --
+  + name: string
+}
+
+entity "Cuidador" {
+  + id: integer
+  --
+  + name: string
+  + specialty: string
+}
+
+entity "Actividad" {
+  + id: integer
+  --
+  + name: string
+  + day: date
+  + time: time
+}
+
+Animal ||--o{ Especie
+Animal ||--o{ Recinto
+Animal ||--o{ Cuidador
+Actividad ||--o{ Recinto
+
+@enduml
